@@ -9,12 +9,12 @@ init:
     #  - set BUILDVER=%APPVEYOR_BUILD_VERSION%-$($env:APPVEYOR_REPO_COMMIT.substring(0,7))
 
 cache:
-  - node_modules
-  - '%APPDATA%\npm-cache'
-  - '%USERPROFILE%\.electron'
-  - $HOME/.cache/electron
-  - $HOME/.cache/electron-builder
-  - $HOME/.npm/_prebuilds
+    #  - node_modules
+    #  - '%APPDATA%\npm-cache'
+    #  - '%USERPROFILE%\.electron'
+    #  - $HOME/.cache/electron
+    #  - $HOME/.cache/electron-builder
+    #  - $HOME/.npm/_prebuilds
 
 environment:
   access_token:
@@ -24,6 +24,7 @@ environment:
 install:
   - ps: Install-Product node ''
   - git reset --hard HEAD
+  - SET NODE_PATH=.
   - npm install --global npm@latest
     #  - npm install electron-builder@next # force install next version to test electron-builder
   - npm install --global jest
