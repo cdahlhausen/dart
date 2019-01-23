@@ -24,12 +24,13 @@ install:
   - npm install --global npm@latest
     #  - npm install electron-builder@next # force install next version to test electron-builder
   - npm install --global jest
+  - npm install --global
   - set PATH=%APPDATA%\npm;%PATH%
-  - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%PATH%
+  - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;%PATH%
   - echo %PATH%
   - cd %APPVEYOR_BUILD_FOLDER% && npm install
-  - ls %APPVEYOR_BUILD_FOLDER%
   - ls %APPVEYOR_BUILD_FOLDER%/node_modules
+  - npm config ls -l
 
 build_script:
   - npm test --
