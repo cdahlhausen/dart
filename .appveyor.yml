@@ -9,12 +9,12 @@ init:
     #  - set BUILDVER=%APPVEYOR_BUILD_VERSION%-$($env:APPVEYOR_REPO_COMMIT.substring(0,7))
 
 cache:
-    #  - node_modules
-    #  - '%APPDATA%\npm-cache'
-    #  - '%USERPROFILE%\.electron'
-    #  - $HOME/.cache/electron
-    #  - $HOME/.cache/electron-builder
-    #  - $HOME/.npm/_prebuilds
+     - node_modules
+     - '%APPDATA%\npm-cache'
+     - '%USERPROFILE%\.electron'
+     - $HOME/.cache/electron
+     - $HOME/.cache/electron-builder
+     - $HOME/.npm/_prebuilds
 
 clone_folder: c:\projects\dart
 
@@ -36,7 +36,7 @@ install:
   - npm config ls
 
 build_script:
-  - npm test --
+   - npm test --
     #- cd %APPVEYOR_BUILD_FOLDER%/electron && electron-builder .
 
 #artifacts:
