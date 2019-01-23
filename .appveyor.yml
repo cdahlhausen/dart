@@ -33,7 +33,7 @@ install:
   - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;C:\Users\appveyor\AppData\Roaming\npm\node_modules;%PATH%
   - echo %PATH%
   - npm install
-  - mklink node_modules .node_modules
+  - npm config ls
 
 build_script:
   - npm test --
