@@ -27,14 +27,12 @@ environment:
 install:
   - ps: Install-Product node ''
   - git reset --hard HEAD
-  - SET NODE_PATH=%APP
   - npm install --global npm@latest
     #  - npm install electron-builder@next # force install next version to test electron-builder
   - npm install --global jest
   - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;%PATH%
   - echo %PATH%
   - npm install
-  - npm link
 
 build_script:
   - npm test --
