@@ -35,7 +35,7 @@ install:
   - npm install
 
 build_script:
-   - cd %APPVEYOR_BUILD_FOLDER%/core && npm test --
+   - cd %APPVEYOR_BUILD_FOLDER%/core && npm test -- --runInBand
     #- cd %APPVEYOR_BUILD_FOLDER%/electron && electron-builder .
 
 #artifacts:
