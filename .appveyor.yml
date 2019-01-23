@@ -29,8 +29,7 @@ install:
   - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;%PATH%
   - echo %PATH%
   - cd %APPVEYOR_BUILD_FOLDER% && npm install
-  - ls %APPVEYOR_BUILD_FOLDER%/node_modules
-  - npm config ls -l
+  - npm link
 
 build_script:
   - npm test --
