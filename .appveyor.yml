@@ -28,9 +28,11 @@ install:
   - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%PATH%
   - echo %PATH%
   - cd %APPVEYOR_BUILD_FOLDER% && npm install
+  - ls %APPVEYOR_BUILD_FOLDER%
+  - ls %APPVEYOR_BUILD_FOLDER%/node_modules
 
 build_script:
-  - npm test -- --runInBand
+  - npm test --
     #- cd %APPVEYOR_BUILD_FOLDER%/electron && electron-builder .
 
 #artifacts:
