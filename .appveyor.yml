@@ -28,11 +28,12 @@ install:
   - git reset --hard HEAD
   - npm install --global npm@latest
     #  - npm install electron-builder@next # force install next version to test electron-builder
-  - npm install --global jest
+    #  - npm install --global jest
   - set NODE_PATH=C:\Users\appveyor\AppData\Roaming\npm\node_modules;%APPVEYOR_BUILD_FOLDER%/node_modules;%NODE_PATH%
-  - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;%PATH%
+  - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;C:\Users\appveyor\AppData\Roaming\npm\node_modules;%PATH%
   - echo %PATH%
   - npm install
+  - mklink node_modules .node_modules
 
 build_script:
   - npm test --
