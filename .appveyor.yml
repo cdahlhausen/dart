@@ -21,7 +21,7 @@ clone_folder: c:\projects\dart
 environment:
   access_token:
     secure: "0muZEDVGEpw8OhnyWFnafYkUgrt+7kl6MdWEA2guW8oLX6s3dMoRrhQjuF3Sbpi5"
-  node_path: %USERPROFILE%\AppData\Roaming\npm\node_modules
+  node_path: "%USERPROFILE%\AppData\Roaming\npm\node_modules"
 #  artifactName: DARTtest.Setup.0.1.8.$(APPVEYOR_BUILD_VERSION).$(APPVEYOR_REPO_COMMIT).exe
 
 install:
