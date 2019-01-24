@@ -39,6 +39,7 @@
         "tape": "^4.9.0"
     },
     "scripts": {
+        "postinstall": "electron-builder install-app-deps",
         "electron-toolkit": "electron ./node_modules/electron-toolkit",
         "start": "electron .",
         "release": "build",
