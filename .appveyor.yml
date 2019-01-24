@@ -40,7 +40,7 @@ build_script:
     - electron-builder .
 
 artifacts:
-  - file: 'dist/*.exe'
+  - path: 'dist/*.exe'
     name: DART-Windows
 
 # notifications:
