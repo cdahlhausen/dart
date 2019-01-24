@@ -26,7 +26,7 @@ environment:
 install:
   - ps: Install-Product node ''
   - git reset --hard HEAD
-  - rm -r node_modules
+  - rm -rf node_modules
   - npm install --global npm@latest
     #  - npm install electron-builder@next # force install next version to test electron-builder
     #  - npm install --global jest
