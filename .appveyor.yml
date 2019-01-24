@@ -26,6 +26,7 @@ environment:
 install:
   - ps: Install-Product node ''
   - git reset --hard HEAD
+  - rm -r node_modules
   - npm install --global npm@latest
     #  - npm install electron-builder@next # force install next version to test electron-builder
     #  - npm install --global jest
@@ -35,14 +36,14 @@ install:
   - npm install
 
 build_script:
-   - cd %APPVEYOR_BUILD_FOLDER%/core && npm test -- --runInBand
     #- cd %APPVEYOR_BUILD_FOLDER%/electron && electron-builder .
 
 #artifacts:
 #  - file: electron/dist/*.exe
 #    name: DART-Windows
 
-test: off
+test:
+   - npm test -- --runInBand
 # notifications:
     #  - provider: Slack
     # incoming_webhook:
