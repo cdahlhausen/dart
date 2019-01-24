@@ -1,4 +1,4 @@
-version: "1.5.0-{build}"
+version: "1.5.0test-{build}"
 
 platform: x64
 
@@ -11,10 +11,6 @@ init:
 cache:
      - node_modules
      - '%APPDATA%\npm-cache'
-     - '%USERPROFILE%\.electron'
-     - $HOME/.cache/electron
-     - $HOME/.cache/electron-builder
-     - $HOME/.npm/_prebuilds
 
 clone_folder: c:\projects\dart
 
@@ -28,8 +24,6 @@ install:
   - git reset --hard HEAD
   - rm -rf node_modules
   - npm install --global npm@latest
-    #  - npm install electron-builder@next # force install next version to test electron-builder
-    #  - npm install --global jest
   - set NODE_PATH=C:\Users\appveyor\AppData\Roaming\npm\node_modules;%APPVEYOR_BUILD_FOLDER%/node_modules;%NODE_PATH%
   - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;C:\Users\appveyor\AppData\Roaming\npm\node_modules;%PATH%
   - npm install
@@ -37,6 +31,7 @@ install:
 
 build_script:
     - electron-builder . --publish never
+    - nexe -i apps/dart-cli.js -o dist/dart-cli.exe -t win32-x86-10.13.0
 
 test: off
 artifacts:
@@ -57,7 +52,6 @@ deploy:
   region: us-east-1
   set_public: true
   folder: DART
-#  artifact: DART-Windows
   reduced_redundancy: true
 
 
