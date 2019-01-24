@@ -31,7 +31,7 @@ install:
 
 build_script:
     - electron-builder . --publish never
-    - nexe -i apps/dart-cli.js -o dist/dart-cli.exe -t win32-x86-10.13.0
+    - nexe -i apps/dart-cli.js -o dist/dart-cli-%APPVEYOR_BUILD_VERSION%.exe -t win32-x86-10.13.0
 
 test: off
 artifacts:
