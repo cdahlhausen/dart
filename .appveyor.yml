@@ -39,9 +39,9 @@ install:
 build_script:
     - electron-builder .
 
-#artifacts:
-#  - file: electron/dist/*.exe
-#    name: DART-Windows
+artifacts:
+  - file: electron/dist/*.exe
+    name: DART-Windows
 
 # notifications:
     #  - provider: Slack
