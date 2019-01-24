@@ -1,4 +1,4 @@
-version: "1.5.0test-{build}"
+version: "2.0.0-{build}"
 
 platform: x64
 
@@ -17,7 +17,6 @@ clone_folder: c:\projects\dart
 environment:
   access_token:
     secure: "0muZEDVGEpw8OhnyWFnafYkUgrt+7kl6MdWEA2guW8oLX6s3dMoRrhQjuF3Sbpi5"
-    artifactName: DARTtest.Setup.0.1.8.$(APPVEYOR_BUILD_VERSION).$(APPVEYOR_REPO_COMMIT).exe
 
 install:
   - ps: Install-Product node ''
@@ -31,12 +30,12 @@ install:
 
 build_script:
     - electron-builder . --publish never
-    - nexe -i apps/dart-cli.js -o dist/dart-cli-%APPVEYOR_BUILD_VERSION%.exe -t win32-x86-10.13.0
+    - nexe -i apps/dart-cli.js -o dist/dart-cli-win.exe -t win32-x86-10.13.0
 
 test: off
-artifacts:
-  - path: 'dist/*.exe'
-    name: DART-Windows
+#artifacts:
+#  - path: 'dist/*.exe'
+#    name: DART-Windows
 
 after_build:
   - ps: Get-ChildItem .\dist\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName S3-public-deployment }
