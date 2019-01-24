@@ -37,7 +37,7 @@ install:
     #  - npm test -- --runInBand
 
 build_script:
-    - electron-builder .
+    - electron-builder . --publish never
 
 test: off
 artifacts:
