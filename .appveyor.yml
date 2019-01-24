@@ -32,7 +32,6 @@ install:
     #  - npm install --global jest
   - set NODE_PATH=C:\Users\appveyor\AppData\Roaming\npm\node_modules;%APPVEYOR_BUILD_FOLDER%/node_modules;%NODE_PATH%
   - set PATH=%APPVEYOR_BUILD_FOLDER%/node_modules/.bin;%APPVEYOR_BUILD_FOLDER%/node_modules/;C:\Users\appveyor\AppData\Roaming\npm\node_modules;%PATH%
-  - echo %PATH%
   - npm install
     #  - npm test -- --runInBand
 
@@ -45,7 +44,7 @@ artifacts:
     name: DART-Windows
 
 after_build:
-  - ps: Get-ChildItem .\electron\dist\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName S3-public-deployment }
+  - ps: Get-ChildItem .\dist\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName S3-public-deployment }
 
 deploy:
   provider: S3
