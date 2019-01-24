@@ -51,6 +51,7 @@
         "productName": "DART",
         "electronVersion": "4.0.0",
         "asar": true,
+        "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
         "directories": {
             "output": "dist"
         },
