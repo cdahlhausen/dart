@@ -12,16 +12,21 @@ before_install:
     mkdir -p /tmp/git-lfs && curl -L https://github.com/github/git-lfs/releases/download/v2.3.1/git-lfs-$([ "$TRAVIS_OS_NAME" == "linux" ] && echo "linux" || echo "darwin")-amd64-2.3.1.tar.gz | tar -xz -C /tmp/git-lfs --strip-components 1
     export PATH="/tmp/git-lfs:$PATH"
   fi
-before_script:
-- git lfs pull
-script:
-- buildver="$(grep version package.json |sed "s/[^0-9.]//g").$(git log --format=%h
-  -1)"
+install:
 - npm install --global npm@latest
 - rm -rf node_modules
 - npm install fsevents
 - npm install
+
+before_script:
+- git lfs pull
+- buildver="$(grep version package.json |sed "s/[^0-9.]//g").$(git log --format=%h -1)"
+
+script:
   #- npm test -- # Run Tests
+- electron-builder . --publish never
+
+after_success:
   #- "./jsdoc.sh" #Build Documentation
 
 
