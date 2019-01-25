@@ -19,6 +19,7 @@ script:
   -1)"
 - npm install --global npm@latest
 - rm -rf node_modules
+- npm install fsevents
 - npm install
   #- npm test -- # Run Tests
   #- "./jsdoc.sh" #Build Documentation
