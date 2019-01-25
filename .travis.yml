@@ -55,5 +55,6 @@ deploy:
    local-dir: dist
    upload-dir: DART
    acl: public_read
+   skip_cleanup: true
    on:
      repo: cdahlhausen/darttest
