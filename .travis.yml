@@ -30,7 +30,7 @@ env:
 deploy:
  - provider: pages
    skip-cleanup: true
-   github-token: "$GH_TOKEN"
+   github-token: $GH_TOKEN
    keep-history: true
    verbose: true
    local-dir: docs
