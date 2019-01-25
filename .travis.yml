@@ -17,13 +17,13 @@ install:
 - rm -rf node_modules
 - npm install
 before_script:
-- git lfs pull
-- buildver="$(grep version package.json |sed "s/[^0-9.]//g").$(git log --format=%h
-  -1)"
+ - git lfs pull
+ - buildver="$(grep version package.json |sed "s/[^0-9.]//g").$(git log --format=%h -1)"
 script:
-- electron-builder . --publish never
-- nexe -i apps/dart-cli.js -o dist/dart-cli-osx -t mac-x64-10.13.0
+ - electron-builder . --publish never
+ - nexe -i apps/dart-cli.js -o dist/dart-cli-osx -t mac-x64-10.13.0
 after_success:
+    - ls -al dist
 env:
   global:
   - secure: yufxN+orgKMu4xSawX8oz6NeAtaTJSfOoTQuxGTI/W2vrkCadBu6p7yC2f7CiWGzGMzPCTG+HjT0+P6m1vFoFZgMZyFVvzGDA2Ec9exL3ZWZHwGVKm9C5SqiAzpzCZz7e5TBpv22hhBTP2JN0upNNd2KwN9sSpJUD5KNIMHLKYpbAl303y6po+sYkGKiw6WYZqPVpt27py6XLtgzlkj6LqGB4NP/uhQfxyRV9vXSFG6YenLBekKlYlSlaEMyvwezUthmyi9xyPSKLPg1xODayVlG7dXLEL6wjXjZQIWtokb2ogNCc9o47uDJbfesDfHingDhk4TYLDbF7TlE65mu2AToaPV7rZ5sPIJ4mhy7IO/jOPQiAgUFmky9rojfzOfGjSN6yMkuFbdnv1WnR6z/6kt4CfF4wHVoe2FLvZBGIE6TuIOdFG2LRSdoyZIK4cHLea3fVGHOLAS83V88gA72NOz+xNDKTvdBHSusNFrVSjjJq3m8mbGqg3shdzoi9/vUMgMh0nJ388TeSyKvchi0D3W3PfLWRy9FIEMV+TnSER4f83a02NIOtn2BVI2tSGzPbFDuzAlakq9nqklkX5WouyW791YcO/6tmP+V4ahFzX39NAgWguvqPEgwEOfG3JSvVDvMfGyoXyuoHvWPUD4aTWZ5lTITrJ3KiayYh/KoFiU=
