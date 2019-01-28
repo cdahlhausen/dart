@@ -60,6 +60,7 @@
             "output": "dist"
         },
         "mac": {
+            "type": "distribution",
             "target": [
                 {
                     "target": "dmg",
