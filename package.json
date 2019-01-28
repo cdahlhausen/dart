@@ -50,6 +50,8 @@
         "copyright": "Copyright © 2019 APTrust",
         "productName": "DART",
         "electronVersion": "4.0.0",
+        "author": "Academic Preservation Trust",
+        "email" : "info@aptrust.org",
         "asar": true,
         "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
         "directories": {
