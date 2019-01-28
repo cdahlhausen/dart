@@ -69,11 +69,10 @@
        "linux": {
             "target": [
                 {
-                    "target": "deb",
+                    "target": "deb"
                 }
             ],
             "category": "public.app-category.productivity"
         }
-
     }
 }
